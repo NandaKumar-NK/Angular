@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'APIConsumption'`, () => {
+  it(`should have as title 'FormsProject'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('APIConsumption');
+    expect(app.title).toEqual('FormsProject');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('APIConsumption app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('FormsProject app is running!');
   });
 });
