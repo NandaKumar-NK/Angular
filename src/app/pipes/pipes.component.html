@@ -1,0 +1,23 @@
+<p>{{'hello world '|uppercase}}</p>
+<p>{{'Hello World '|lowercase}}</p>
+
+{{ currentDate| date:'2023-05-23'}}
+<br>
+{{2578775|currency}}
+<br>
+{{2578775.87545787|currency:'INR':'symbol':'.2-5'}}
+<br>
+{{0.50|percent}}
+<br>
+{{0.5|percent:'.2'}}
+<br>
+{{[1,2,3,4,5,6,7,8] | slice:2}}
+<br>
+{{course|json}}
+<br>
+{{'id'|i18nSelect:emoji}}
+<br>
+<input type="text" #inp>
+<!-- <ul>
+    <li *ngFor="let n of namesarray | pipe:inp.value">{{n}}</li>
+</ul> -->

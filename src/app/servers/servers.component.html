@@ -1,0 +1,70 @@
+<label>Server Count:</label>
+<input type="type"  [(ngModel)]="num"/><br>
+
+<div [ngSwitch]="num" > server count
+<div *ngSwitchCase="1">count is 1</div>
+<div *ngSwitchCase="2">count is 2</div>
+<div *ngSwitchCase="3">count is 3</div>
+<div *ngSwitchCase="4">count is 4</div>
+<div *ngSwitchDefault>enter 1-4</div>
+</div>
+
+<!-- <label>server name</label> -->
+<!-- <input type="text" (input)="onServerNameTyped($event)"><br> -->
+<!-- <input type="text" [(ngModel)]="servername">
+<option *ngfor="let server of serverslist">{{server}}</option>
+<br>
+<div [ngSwitch]='servername' >
+        <p *ngSwitchCase="'S1'">Server One </p>
+        <p *ngSwitchCase="'S2'">Server Two </p>
+        <p *ngSwitchCase="'S2'">Server Two Again </p>
+        <p *ngSwitchDefault>This is Default</p>
+        <p *ngSwitchDefault>This is Default</p>
+      </div> -->
+
+
+      <div [ngSwitch]='serverSelected' >
+        <ng-template [ngSwitchCase]="'S1'">Server One </ng-template>
+        <ng-template [ngSwitchCase]="'S2'">Server Two </ng-template>
+        <ng-template [ngSwitchCase]="'S2'">Server Two Again </ng-template>
+        <ng-template ngSwitchDefault>This is Default</ng-template>
+        <ng-template ngSwitchDefault>This is Default</ng-template>
+        <ng-template [ngSwitchCase]="0">None </ng-template>
+      </div>
+
+<!-- //shared switch -->
+      <ng-container [ngSwitch]="serverSelected">
+ 
+        <ng-container *ngSwitchCase="'S1'">
+          <ng-container *ngTemplateOutlet="sharedTemplate12"></ng-container>
+        </ng-container>
+        <ng-container *ngSwitchCase="'S2'">
+          <ng-container *ngTemplateOutlet="sharedTemplate12"></ng-container>
+        </ng-container>
+   
+        <ng-container *ngSwitchCase="'S3'">
+          <ng-container *ngTemplateOutlet="sharedTemplate34"></ng-container>
+        </ng-container>
+   
+        <ng-container *ngSwitchCase="'S4'">
+          <ng-container *ngTemplateOutlet="sharedTemplate34"></ng-container>
+        </ng-container>
+   
+        <ng-template #sharedTemplate12>Shared between 1,2</ng-template>
+        <ng-template #sharedTemplate34>Shared between 3,4</ng-template>
+        <ng-container *ngSwitchDefault>Default Template</ng-container>
+   
+      </ng-container>
+
+<!-- <p>{{servername}}</p>
+
+<button class="btn btn-primary" [disabled]="!serverCreateOption" (click)="onServerAdd()">Add Server</button>
+<p> Prop Value: {{serverCreateOption}}</p>
+<p  *ngif="serverCreated=='Created';
+else beforeServerCreation">server Creation Status :{{serverCreated}}</p>
+<ng-template #beforeServerCreation>ser {{serverCreated}}</ng-template> -->
+<!-- <p>{{serverCreated}}</p> -->
+<!-- <p >{{serverStatus}} </p>
+
+<app-server *ngFor="let server of serversList"></app-server> -->
+<!-- <app-server></app-server>> --> 
